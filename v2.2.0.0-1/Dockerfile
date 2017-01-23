@@ -7,7 +7,8 @@ ARG ANSIBLE_VERSION=v2.2.0.0-1
 # install jupyter
 RUN curl -L https://bootstrap.pypa.io/get-pip.py | python && \
     pip install --upgrade pip
-RUN yum -y install python-devel.x86_64 gcc-c++
+RUN yum -y install python-devel.x86_64 \
+                   gcc-c++
 RUN pip install jupyter
 
 # install jupyter extension
@@ -15,8 +16,7 @@ RUN pip install jupyter_nbextensions_configurator && \
     pip install https://github.com/ipython-contrib/jupyter_contrib_nbextensions/tarball/master && \
     jupyter contrib nbextension install --user && \
     jupyter nbextension enable toc2/main && \
-    pip install jupyterthemes && \
-    jt -t monokai
+    pip install jupyterthemes
 
 # install ansible
 RUN yum -y install git openssl-devel && \
