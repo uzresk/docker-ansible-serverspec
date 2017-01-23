@@ -1,0 +1,10 @@
+#!/bin/sh
+
+ANSIBLE_VERSION=v2.2.0.0-1
+TAG=v2.2.0.0-1
+
+docker build \
+  --build-arg "ANSIBLE_VERSION=${ANSIBLE_VERSION}" \
+  ${BUILD_ARGS} \
+  -t ${TAG} \
+  .
