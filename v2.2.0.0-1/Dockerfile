@@ -45,4 +45,6 @@ RUN gem install bundler && \
                 rspec_junit_formatter
 
 # start jupyter
-CMD jupyter-notebook --ip=0.0.0.0
+RUN mkdir -p /notebooks
+WORKDIR /notebooks
+CMD jupyter notebook --ip=0.0.0.0
