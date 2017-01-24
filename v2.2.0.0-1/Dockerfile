@@ -21,7 +21,9 @@ RUN pip install jupyter_nbextensions_configurator && \
 # install ansible
 RUN yum -y install git openssl-devel && \
     pip install cryptography && \
-    pip install git+https://github.com/ansible/ansible.git@$ANSIBLE_VERSION
+    pip install git+https://github.com/ansible/ansible.git@$ANSIBLE_VERSION && \
+    pip install boto && \
+    pip install pywinrm 
 
 # install ruby & serverspec
 ENV RBENV_ROOT /root/.rbenv
@@ -45,6 +47,6 @@ RUN gem install bundler && \
                 rspec_junit_formatter
 
 # start jupyter
-RUN mkdir -p /notebooks
-WORKDIR /notebooks
-CMD jupyter notebook --ip=0.0.0.0
+#RUN mkdir -p /notebooks
+#WORKDIR /notebooks
+#CMD ["jupyter", "notebook"]
