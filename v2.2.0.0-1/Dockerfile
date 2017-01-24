@@ -47,10 +47,10 @@ RUN gem install bundler && \
                 rspec_junit_formatter
 
 # install other package
-RUN yum -y install epel-release && \
-                   iproute && \
-                   unzip && \
-                   java-1.8.0-openjdk.x86_64 &&
+RUN yum -y install epel-release \
+                   iproute \
+                   unzip \
+                   java-1.8.0-openjdk.x86_64 \
                    sshpass
 
 # start jupyter
