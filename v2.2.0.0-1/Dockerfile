@@ -50,8 +50,8 @@ RUN gem install bundler && \
 RUN yum -y install epel-release \
                    iproute \
                    unzip \
-                   java-1.8.0-openjdk.x86_64 \
-                   sshpass
+                   java-1.8.0-openjdk.x86_64
+RUN yum -y install sshpass
 
 # start jupyter
 #RUN mkdir -p /notebooks
