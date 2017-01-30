@@ -19,7 +19,7 @@ RUN pip install jupyter_nbextensions_configurator && \
     pip install jupyterthemes
 
 # install ansible
-RUN yum -y install git openssl-devel && \
+RUN yum -y install git openssl-devel sshpass && \
     pip install cryptography && \
     pip install git+https://github.com/ansible/ansible.git@$ANSIBLE_VERSION && \
     pip install boto && \
@@ -50,8 +50,9 @@ RUN gem install bundler && \
 RUN yum -y install epel-release \
                    iproute \
                    unzip \
-                   java-1.8.0-openjdk.x86_64
-RUN yum -y install sshpass
+                   java-1.8.0-openjdk.x86_64 \
+                   java-1.8.0-openjdk-devel.x86_64
+ENV JAVA_HOME $(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
 
 # start jupyter
 #RUN mkdir -p /notebooks
