@@ -19,7 +19,7 @@ RUN pip install jupyter_nbextensions_configurator && \
     pip install jupyterthemes
 
 # install ansible
-RUN yum -y install epel-release git openssl-devel sshpass && \
+RUN yum --enablerepo=epel -y install epel-release git openssl-devel sshpass && \
     pip install cryptography && \
     pip install git+https://github.com/ansible/ansible.git@$ANSIBLE_VERSION && \
     pip install boto && \
