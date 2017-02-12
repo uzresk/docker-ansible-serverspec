@@ -38,5 +38,6 @@ RUN rbenv install 2.4.0 && \
     rbenv global 2.4.0
 RUN gem install bundler && \
     gem install serverspec \
-                rspec_junit_formatter
+                rspec_junit_formatter \
+                winrm
 
