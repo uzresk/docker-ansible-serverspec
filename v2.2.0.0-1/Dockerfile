@@ -39,5 +39,6 @@ RUN rbenv install 2.4.0 && \
 RUN gem install bundler && \
     gem install serverspec \
                 rspec_junit_formatter \
-                winrm
+                winrm \
+                ansible-vault
 
