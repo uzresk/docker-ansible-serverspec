@@ -40,5 +40,6 @@ RUN gem install bundler && \
     gem install serverspec \
                 rspec_junit_formatter \
                 winrm \
-                ansible-vault
+                ansible-vault \
+                highline 
 
